@@ -26,16 +26,23 @@ var config = {
   
   output: {
     path: __dirname + '/dist/ui',
-    publicPath: '/ui',
+    publicPath: '/ui/',
     filename: "bundle.js",
     chunkFilename: 'bundle.chunk-[name].js'  // for loazy loading chunk js file for the module
   },
   
   module: {
     loaders: [
-
+      
       // load and compile javascript
-      { test: /\.js$/, exclude: /node_modules/, loader:"babel" },
+      {
+        test: /\.jsx?$/,
+        exclude: /(node_modules|bower_components)/,
+        loader: 'babel',
+        query: {
+          presets: ['react-hmre', 'react', 'es2015', 'stage-0']
+        }
+      },
 
       // load css and scss
       { 
@@ -71,15 +78,18 @@ var config = {
     new webpack.DefinePlugin({
         'process.env.NODE_ENV': '"development"'
     }),
-            
+    
     new webpack.ProvidePlugin({
+      React: 'react',
+      /*
       Promise: 'bluebird',
       jQuery: 'jquery',
       $: 'jquery',
       Tether: 'tether', 
       'window.Tether': 'tether'
+      */
     })
-
+    
   ],
 
   // support source maps

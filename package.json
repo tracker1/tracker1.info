@@ -7,9 +7,9 @@
   "scripts": {
     "clean": "rimraf dist",
     "build": "npm run clean && npm run build:client && npm run build:server",
-    "build:client": "cross-env NODE_ENV=production webpack",
+    "build:client": "cross-env NODE_ENV=production webpack -p",
     "build:server": "cross-env NODE_ENV=production babel ./server --out-dir ./dist/server",
-    "post-install": "npm run build",
+    "install": "npm run build",
     "start": "node ./dist/server",
     "dev": "babel-node server/dev"
   },
@@ -42,6 +42,7 @@
     "rimraf": "^2.5.2",
     "sass-loader": "^3.2.0",
     "script-loader": "^0.6.1",
+    "stack-source-map": "^1.0.4",
     "style-loader": "^0.13.0",
     "url-loader": "^0.5.7",
     "webpack": "^1.12.14",

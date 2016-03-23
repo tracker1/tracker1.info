@@ -27,16 +27,31 @@ var config = {
   
   output: {
     path: __dirname + '/dist/ui',
-    publicPath: '/ui',
+    publicPath: '/ui/',
     filename: "bundle.js",
-    chunkFilename: 'bundle.chunk-[name].js'  // for loazy loading chunk js file for the module
+    chunkFilename: 'bundle.chunk-[name].js',  // for loazy loading chunk js file for the module
+    comments: function(node, comment) {
+        var text = comment.value;
+        var type = comment.type;
+        if (type == "comment2") {
+            // multiline comment
+            return /@copyright/i.test(text);
+        }
+    }
   },
   
   module: {
     loaders: [
 
       // load and compile javascript
-      { test: /\.js$/, exclude: /node_modules/, loader:"babel" },
+      {
+        test: /\.jsx?$/,
+        exclude: /(node_modules|bower_components)/,
+        loader: 'babel',
+        query: {
+          presets: ['react', 'es2015', 'stage-0']
+        }
+      },
 
       // load css and scss
       { 
@@ -74,23 +89,22 @@ var config = {
     new webpack.DefinePlugin({
         'process.env.NODE_ENV': '"production"'
     }),
-            
+    
     new webpack.ProvidePlugin({
+      React: 'react',
+      /*
       Promise: 'bluebird',
       jQuery: 'jquery',
       $: 'jquery',
       Tether: 'tether', 
       'window.Tether': 'tether'
-    }),
-    
-    new webpack.optimize.UglifyJsPlugin({
-      sourceMap: false,
-      mangle: false
+      */
     })
+    
   ],
 
   // support source maps
-  devtool: null, //'source-map',
+  devtool: 'source-map',
   
   sassLoader: {
     //needed for autoprefixer and url/file
