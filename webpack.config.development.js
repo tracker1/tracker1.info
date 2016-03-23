@@ -10,8 +10,8 @@ var config = {
   entry: [
     'stack-source-map/register',
     'webpack-hot-middleware/client',
-    './client/globals.js',
-    './client/index.js'
+    './ui/globals.js',
+    './ui/index.js'
   ],
   
   resolve: {
