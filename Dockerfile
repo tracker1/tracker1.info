@@ -9,4 +9,5 @@ RUN npm install
 RUN NODE_ENV=production ./node_modules/.bin/webpack -p
 RUN NODE_ENV=production ./node_modules/.bin/babel ./server --out-dir ./dist/server
 
+EXPOSE 8080
 CMD [ "npm", "start" ]
