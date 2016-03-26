@@ -1,9 +1,12 @@
-FROM node:5-onbuild
-EXPOSE 8080
+FROM node:5.9.1
 
+RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
-ENV NODE_ENV=production
-RUN ./node_modules/.bin/webpack -p
-RUN ./node_modules/.bin/babel ./server --out-dir ./dist/server
+
+COPY . /usr/src/app
+RUN npm install
+
+RUN NODE_ENV=production ./node_modules/.bin/webpack -p
+RUN NODE_ENV=production ./node_modules/.bin/babel ./server --out-dir ./dist/server
 
 CMD [ "npm", "start" ]
