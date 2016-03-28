@@ -6,9 +6,9 @@ import Job001 from './1994-12-self-roughneck';
 //import Job006 from './2001-05-dms';
 import Job007 from './2003-06-inxsol';
 //import Job008 from './2003-06-travel-center';
-import Job009 from './2007-01-datafusion';
-import Job010 from './2008-06-uop-apollo-mdi';
-import Job011 from './2009-03-solutionstream';
+//import Job009 from './2007-01-datafusion';
+//import Job010 from './2008-06-uop-apollo-mdi';
+//import Job011 from './2009-03-solutionstream';
 import Job012 from './2009-06-wells-comsys';
 import Job013 from './2010-07-usair-comsys';
 import Job014 from './2011-02-inxsol';
@@ -30,10 +30,7 @@ export default function renderWorkHistory() {
     <Job014 />
     <Job013 />
     <Job012 />
-    <Job011 />
-    <Job010 />
     <Job001 />
-    <Job009 />
     <Job007 />
   </div>;
 }
