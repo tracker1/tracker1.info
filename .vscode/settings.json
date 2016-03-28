@@ -5,4 +5,8 @@
 
   // Controls if the editor will insert spaces for tabs. Accepted values:  "auto", true, false. If set to "auto", the value will be guessed when a file is opened.
   "editor.insertSpaces": true,
+  
+
+	// The default end of line character.
+	"files.eol": "\n",
 }
