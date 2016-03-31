@@ -13,7 +13,7 @@ const app = express();
 
 //app.use('/api', api);
 
-app.use('/assets', express.static(path.resolve(__dirname, '../assets')));
+app.use('/content', express.static(path.resolve(__dirname, '../content')));
 
 // webpack dev server will also serve /assets
 app.use(require("webpack-dev-middleware")(compiler, {

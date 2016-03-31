@@ -12,7 +12,7 @@ app.use(compression({level:9}));
 //dist directory should have *ALL* resources and assets
 //TODO: update to match prod
 app.use('/ui', express.static(path.resolve(__dirname, '../ui')));
-app.use('/assets', express.static(path.resolve(__dirname, '../../assets')));
+app.use('/content', express.static(path.resolve(__dirname, '../../content')));
 
 app.get('/bad-browser.html', function(req,res) {
   res.sendFile(path.resolve(__dirname, '../ui/bad-browser.html'));
