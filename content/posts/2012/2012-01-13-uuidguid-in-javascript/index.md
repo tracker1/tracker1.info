@@ -127,7 +127,7 @@ categories:
 
   var rnd = Kybos();
 
-  // UUID/GUID implementation from http://frugalcoder.us/post/2012/01/13/javascript-guid-uuid-generator.aspx
+  // UUID/GUID implementation from http://frugalcoder.us/post/2012/01/13/javascript-guid-uuid-generator/
   var UUID = {
     &quot;empty&quot;: &quot;00000000-0000-0000-0000-000000000000&quot;
     ,&quot;parse&quot;: function(input) {

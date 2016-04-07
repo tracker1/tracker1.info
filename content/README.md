@@ -1,6 +1,7 @@
-# convert-blogengine-data
+# tracker1.info / content
 
-Legacy data/blog for frugalcoder.us, being converted for new use in tracker1.info
+content for tracker1.info (`posts/` converted from frugalcoder.us).
+
 
 ## LICENSE
 
